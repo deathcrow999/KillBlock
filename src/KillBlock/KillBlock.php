@@ -27,7 +27,7 @@ public function onEnable(){
         public function onDeath(PlayerDeathEvent $event){
                 $player = $event->getEntity();
                 if($this->killedByBlock){
-                        $this->getServer()->broadcastMessage($player->getName().' died from standing on obsidian');
+                        $this->getServer()->broadcastMessage($player->getName().' died from standing on emerald');
                         $this->killedByBlock = false;
                         $event->setDeathMessage(null);
                 }
