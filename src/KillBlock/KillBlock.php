@@ -16,14 +16,25 @@ public function onEnable(){
   $this->getServer()->getPluginManager()->registerEvents($this, $this);
 }
 
-public function onMove(PlayerMoveEvent $event){
-  $player = $event->getPlayer();
+     public function onMove(PlayerMoveEvent $event){
+                $player = $event->getPlayer();
+                if($player->getLevel()->getBlockIdAt($player->getFloorX(), $player->getFloorY() -1, $player->getFloorZ()) === 138){
+                $this->killedByBlock = true;
+                $player->kill();
+                }
+        }
+        
+        public function onDeath(PlayerDeathEvent $event){
+                $player = $event->getEntity();
+                if($this->killedByBlock){
+                        $this->getServer()->broadcastMessage($player->getName().' died from standing on obsidian');
+                        $this->killedByBlock = false;
+                        $event->setDeathMessage(null);
+                }
+        }
+}
 
-  if($player->getLevel()->getBlock(new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ()))->getId() === 133){
-   $player->kill();
-  }
-}
-}
+
 
 
 
