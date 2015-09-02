@@ -1,0 +1,6 @@
+name: KillBlock
+author: LiveWire tech
+version: 1.0.0
+description: KillBlock is a plugin that kills a player when they run into or step on a certain block! Useful for keeping people in a certain area!
+main: KillBlock\KillBlock
+api: [1.10.0]
