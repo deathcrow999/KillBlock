@@ -13,6 +13,7 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\command\CommandSender;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\Player;
+use pocketmine\block\Block;
 
 
 class KillBlock extends PluginBase implements Listener{
