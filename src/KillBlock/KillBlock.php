@@ -21,6 +21,7 @@ public function onEnable(){
                 if($player->getLevel()->getBlockIdAt($player->getFloorX(), $player->getFloorY() -1, $player->getFloorZ()) === 138){
                 $this->killedByBlock = true;
                 $player->kill();
+                $player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
                 }
         }
         
