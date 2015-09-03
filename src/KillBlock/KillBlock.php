@@ -35,14 +35,12 @@ class KillBlock extends PluginBase implements Listener{
 
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
-		$x = $player->getX();
-		$y = $player->getY();
-		$z = $player->getZ();
-		$pos = new Vector3($x, $y - 1, $z);
-		$block = $player->getLevel()->getBlock($pos); //Use this method...
-        if($block->getId() === Block::get("EMERALD_BLOCK")->getId()){
-            $player->teleport(new Vector3($x, $y + 50, $z));
-            $this->getLogger()->info(TextFormat::RED . "Teleported! Plugin is working.");
-        }
+		$block = $event->getPlayer()->getLevel()->getBlock($player->floor()->subtract(0, 1));
+		if($block instanceof Block){
+			$id = $block->getId();
+			if($id === Block::get("EMERALD_BLOCK")->getId()){
+				$this->getLogger()->info(TextFormat::RED . "Teleported! Plugin is working.");
+			}
+		}
 	}
 }
