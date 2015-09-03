@@ -6,7 +6,7 @@ so heres our roadmap
 
 DONE
 
--User steps on emerlad block and dies
+-User steps on emerlad block and and is ethier teleported or dies
 
 TODO
 
@@ -18,7 +18,21 @@ TODO
 
 -add killing methods
 
+-fix bugs
+
+-fix issues
+
+-add credits
+
+-add commands
+
+-add command possibilities to KillBlock
+
 ISSUES
 
--Player dies but the character does not get sent back to the start the player gets trapped
-on the emerald block and cannot move or chat
+-Player is launched in the air and keeps going up (Y) value constantly increases
+
+Tried Solutions
+
+-Killing player at certain Y(causes server crash)
+-Creating barrier for hieght(player gets stuck in invisible barrier)
