@@ -7,8 +7,6 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerMoveEvent;
 
-use pocketmine\math\Vector3;
-
 use pocketmine\block\Block;
 
 use pocketmine\utils\TextFormat;
@@ -24,9 +22,9 @@ class KillBlock extends PluginBase implements Listener{
 
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
-		$block = $player->getLevel()->getBlock(new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ()));
+		$block = $player->getLevel()->getBlock($player->floor()->subtract(0, 1));
         	if($block->getId() === Block::EMERALD_BLOCK){
-            		$player->teleport(new Vector3($player->x, $player->y + 50, $player->z));
+            		$player->teleport($player->floor()->add(0, 50));
             		$this->getLogger()->info(TextFormat::RED . "Teleported! Plugin is working.");
 		}
 	}
