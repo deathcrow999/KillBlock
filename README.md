@@ -8,11 +8,13 @@ DONE
 
 -User steps on emerlad block and and is ethier teleported or dies
 
+-add config file
+
+-Added custom death messages
+
 TODO
 
 -add better coding
-
--add config file
 
 -add option to change killing block
 
