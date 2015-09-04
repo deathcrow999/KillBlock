@@ -4,13 +4,15 @@ Hello Again everyone so heres a plugin when user steps on an emerald block the u
 
 so heres our roadmap
 
-DONE
+CONTRIBUTORS
 
--User steps on emerlad block and and is ethier teleported or dies
+@MCPEPIG 
+@legoboy0215
+@luca28pet
+@PrimusLV
+@deathcrow999
 
--add config file
-
--Added custom death messages
+Thank you all so much for your help :D
 
 TODO
 
