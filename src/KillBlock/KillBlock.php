@@ -45,6 +45,9 @@ class KillBlock extends PluginBase implements Listener{
 		$player = $event->getPlayer();
                 $player->setHealth(5);
 		$block = $player->getLevel()->getBlock(new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ()));
+
+    $sender->sendMessage(TextFormat::RED."Mind the fall!");
+
         	if($block->getId() === Block::EMERALD_BLOCK){
 			$player->kill();
 			if($this->config->get('use-custom-death-message')) $this->killedByBlock = true;
