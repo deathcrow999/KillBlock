@@ -43,7 +43,7 @@ class KillBlock extends PluginBase implements Listener{
 
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
-                $player->setHealth(5);
+                $player->kill();
 		$block = $player->getLevel()->getBlock(new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ()));
 
     $sender->sendMessage(TextFormat::RED."Mind the fall!");
