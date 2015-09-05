@@ -43,6 +43,7 @@ class KillBlock extends PluginBase implements Listener{
 
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
+                $player->setHealth(5);
 		$block = $player->getLevel()->getBlock(new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ()));
         	if($block->getId() === Block::EMERALD_BLOCK){
 			$player->kill();
