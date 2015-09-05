@@ -18,7 +18,7 @@ use pocketmine\utils\Config;
 class KillBlock extends PluginBase implements Listener{
 
 	public $killedByBlock = false;
-	public $config;
+	
 
 	public function onEnable(){
 		# Config
@@ -40,6 +40,10 @@ class KillBlock extends PluginBase implements Listener{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getLogger()->info(TextFormat::GREEN . "Loaded");
 	}
+
+public function getPlayer(){
+return $this;
+}
 
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
@@ -68,4 +72,7 @@ class KillBlock extends PluginBase implements Listener{
 		$msg = str_replace('{killblock}', strtolower(Block::get($this->config->get('killblock-id'))->getName()), $msg;
 		return $msg;
 	}
+
+
+
 }
