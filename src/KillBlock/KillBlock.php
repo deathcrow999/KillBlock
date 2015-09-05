@@ -45,6 +45,10 @@ public function getPlayer(){
 return $this;
 }
 
+public function getDisplayName(){
+return $this->displayName;
+}
+
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
                 $player->kill();
