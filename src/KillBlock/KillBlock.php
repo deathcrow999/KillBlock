@@ -72,8 +72,7 @@ return $this->displayName;
 	
 	public function getCustomMessage(Player $player){
 		$msg = $this->config->get('death-message');
-		$msg = str_replace('{player}', $player->getName(), $msg);
-		$msg = str_replace('{killblock}', strtolower(Block::get($this->config->get('killblock-id'))->getName()), $msg;
+	
 		return $msg;
 	}
 
